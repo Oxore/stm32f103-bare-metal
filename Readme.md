@@ -8,3 +8,17 @@ Initially based on [This stackoverflow answer](https://stackoverflow.com/questio
 [How to set up and run openocd on linux](https://github.com/rogerclarkmelbourne/Arduino_STM32/wiki/Programming-an-STM32F103XXX-with-a-generic-%22ST-Link-V2%22-programmer-from-Linux).
 
 UART2 (PA2:TX, PA3:RX) is configured with speed 115200, TIM2 is configured to trigger the interrupt every second on 8 MHz clock frequency.
+
+## Tools
+
+`arm-none-eabi-gcc` and `arm-none-eabi-gdb` from Arch linux repo were used.
+
+# Notes
+
+## GCC Assembler using caveat
+
+You probably should not use any assembler code since you are using gcc assembler. A good and short explanation from the [NASM documetation for v2.09.04 (pdf)](https://www.nasm.us/xdoc/2.09.04/nasmdoc.pdf):
+
+>`gas` is free, and ports over to DOS and Unix, but it’s not very good, since it’s designed to be a back end to `gcc`, which always feeds it correct code. So its error checking is minimal.
+
+I am going to get rid of any assembly code I can do in future, but now it is here, sorry.

@@ -6,7 +6,11 @@ MEMORY
 
 SECTIONS
 {
-    .text : { *(.text*) } > rom
+    .text :
+    {
+        build/flash.s.o
+        *(.text*)
+    } > rom
     .rodata : { *(.rodata*) } > rom
     .bss : { *(.bss*) } > ram
 }
